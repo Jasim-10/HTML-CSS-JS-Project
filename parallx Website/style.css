@@ -1,0 +1,62 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.pimg1{
+    background-image: url("Images/nature.jpg");
+    min-height: 100vh;
+}
+.pimg2{
+    background-image: url("Images/natures.jpg");
+    min-height: 80vh;
+}
+.pimg3{
+    background-image: url("Images/naturee.jpg");
+    min-height: 80vh;
+}
+
+
+.pimg1,.pimg2,.pimg3{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.textBg{
+    background-color: #313534;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.section{
+    padding: 50px 80px;
+    text-align: center;
+}
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-dark{
+    background-color: #666;
+    color: #f4f4f4;
+}
