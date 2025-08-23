@@ -27,9 +27,11 @@ const resetGame = () =>{
 boxes.forEach ((box)=>{
     box.addEventListener("click",()=>{
         if(turnO) {
+            box.style.color = "blue"
             box.innerText = "O";
             turnO = false;
         }else {
+            box.style.color = "green"
             box.innerText = "X";
             turnO = true;
         }
@@ -61,9 +63,15 @@ const showWinner = (winner)=>{
     disableBtns()
 }
 
+const showDraw = ()=>{
+    msg.innerText = "😐 It's a Draw!";
+    msgContainer.classList.remove("hide");
+    disableBtns();
+}
 
 
 const checkWinner = () =>{
+    let winnerFound = false;
     for(let pattern of winPatterns){
         
         let pos1val = boxes[pattern[0]].innerText;
@@ -74,8 +82,13 @@ const checkWinner = () =>{
         if (pos1val != "" && pos2val != "" && pos3val != ""){
             if(pos1val === pos2val && pos2val === pos3val){
                 showWinner(pos1val);
+                winnerFound = true;
             }
         }
+    }
+    let allFilled = [...boxes].every(box => box.innerText !== "");
+    if(!winnerFound && allFilled){
+        showDraw();
     }
 };
 
